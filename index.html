@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Capgift Editions | Premium Jersey Emporium - ₦ Naira</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="animated-bg"></div>
+<div class="video-overlay"></div>
+<div class="custom-cursor" id="customCursor"></div>
+
+<!-- Floating Sale Banner -->
+<div class="sale-banner" id="saleBanner">
+  <i class="fas fa-fire"></i> FLASH SALE! 20% OFF <span id="saleTimer">02:15:33</span> <i class="fas fa-tag"></i>
+</div>
+
+<div class="intro-overlay" id="introOverlay">
+  <div class="intro-content">
+    <div class="intro-logo"><i class="fas fa-crown"></i> CAPGIFT EDITIONS</div>
+    <div class="intro-tagline">by CAPGIFT SERVICES LIMITED</div>
+    <div class="intro-loader"><i class="fas fa-tshirt"></i></div>
+  </div>
+</div>
+
+<div class="main-site" id="mainSite">
+  <div class="site-container">
+    <div class="top-bar stagger-item stagger-1">
+      <div class="logo"><h1><i class="fas fa-crown"></i> CAPGIFT EDITIONS</h1></div>
+      <div class="top-actions">
+        <button class="account-btn" id="openAccountModal"><i class="fas fa-user"></i> Account</button>
+        <button class="loyalty-btn" id="loyaltyBtn"><i class="fas fa-gem"></i> <span id="loyaltyPoints">0</span></button>
+        <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+        <button class="wishlist-toggle" id="wishlistBtn"><i class="fas fa-heart"></i> <span id="wishlistCount">0</span></button>
+        <button class="cart-preview" id="cartBtn"><i class="fas fa-shopping-bag"></i> (<span id="cartCount">0</span>)</button>
+        <button class="theme-toggle" id="darkLightToggle"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+
+    <div class="capgift-hero stagger-item stagger-2">
+      <div class="capgift-title"><i class="fas fa-crown"></i> CAPGIFT EDITIONS <i class="fas fa-crown"></i></div>
+      <div class="typing-container">
+        <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+      </div>
+      <div class="capgift-badge" onclick="document.getElementById('jerseyGrid').scrollIntoView({behavior:'smooth'})"><i class="fas fa-fire"></i> PRE-ORDER NOW <i class="fas fa-arrow-right"></i></div>
+    </div>
+
+    <div class="counter-section stagger-item stagger-3">
+      <div class="counter-item"><div class="counter-number"><span id="counterFans">1,284,567</span>+</div><div class="counter-label">Happy Fans</div></div>
+      <div class="counter-item"><div class="counter-number"><span id="counterDesigns">500</span>+</div><div class="counter-label">Designs</div></div>
+      <div class="counter-item"><div class="counter-number"><span id="counterEditions">100</span></div><div class="counter-label">Editions</div></div>
+      <div class="counter-item"><div class="counter-number"><span id="counterSold">99,999</span>+</div><div class="counter-label">Sold</div></div>
+    </div>
+
+    <div class="countdown-section stagger-item stagger-4">
+      <div class="countdown-title">🔥 NEXT CAPGIFT DROP IN:</div>
+      <div class="countdown-timer">
+        <div class="countdown-block"><div class="countdown-number" id="days">14</div><div class="countdown-label">Days</div></div>
+        <div class="countdown-block"><div class="countdown-number" id="hours">08</div><div class="countdown-label">Hours</div></div>
+        <div class="countdown-block"><div class="countdown-number" id="minutes">23</div><div class="countdown-label">Mins</div></div>
+        <div class="countdown-block"><div class="countdown-number" id="seconds">45</div><div class="countdown-label">Secs</div></div>
+      </div>
+    </div>
+
+    <div id="searchContainer" style="display: none;" class="stagger-item stagger-5">
+      <div class="search-bar"><input type="text" id="searchInput" placeholder="Search..."><button id="searchBtn">Search</button><button id="clearSearchBtn">Clear</button></div>
+    </div>
+
+    <div class="trust-badges stagger-item stagger-6">
+      <div class="trust-item"><i class="fas fa-lock"></i> <span>Secure</span></div>
+      <div class="trust-item"><i class="fas fa-truck"></i> <span>Free Shipping ₦50k+</span></div>
+      <div class="trust-item"><i class="fas fa-undo-alt"></i> <span>14-Day Returns</span></div>
+      <div class="trust-item"><i class="fas fa-certificate"></i> <span>Authentic</span></div>
+    </div>
+
+    <h2 class="section-title">21 CAPGIFT EDITIONS</h2>
+    <div class="jersey-grid" id="jerseyGrid"></div>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="quickview-modal">
+      <div class="quickview-content">
+        <button class="close-quickview" id="closeQuickView">&times;</button>
+        <div class="quickview-image"><img id="qvImage" src="" alt=""></div>
+        <div class="quickview-details">
+          <h2 id="qvName"></h2>
+          <div class="rating" id="qvRating"></div>
+          <div class="price" id="qvPrice"></div>
+          <p id="qvDesc">Limited edition premium jersey. Only 100 pieces worldwide. 100% authentic quality.</p>
+          <select id="qvSize"><option>Size S</option><option>Size M</option><option>Size L</option><option>Size XL</option><option>Size 2XL</option></select>
+          <button class="buy-btn" id="qvAddToCart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Reviews Section -->
+    <div class="reviews-section">
+      <h3>Customer Reviews</h3>
+      <div class="review-form">
+        <input type="text" id="reviewName" placeholder="Your name">
+        <select id="reviewRating"><option value="5">⭐⭐⭐⭐⭐ 5 stars</option><option value="4">⭐⭐⭐⭐ 4 stars</option><option value="3">⭐⭐⭐ 3 stars</option><option value="2">⭐⭐ 2 stars</option><option value="1">⭐ 1 star</option></select>
+        <textarea id="reviewText" rows="2" placeholder="Write your review..."></textarea>
+        <button id="submitReviewBtn">Submit Review</button>
+      </div>
+      <div class="reviews-list" id="reviewsList"></div>
+    </div>
+
+    <div class="vision-mission">
+      <div class="vm-card"><i class="fas fa-eye"></i><h3>Vision</h3><p>Africa's #1 exclusive jersey brand</p></div>
+      <div class="vm-card"><i class="fas fa-bullseye"></i><h3>Mission</h3><p>Limited-edition premium jerseys</p></div>
+    </div>
+
+    <div class="producer-contact">
+      <div class="producer-area">
+        <img class="producer-img" src="https://randomuser.me/api/portraits/men/32.jpg"><img class="producer-img" src="https://randomuser.me/api/portraits/women/44.jpg">
+        <h3>Founders</h3>
+        <div class="social-links"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+      </div>
+      <div class="contact-area">
+        <h3>Contact</h3>
+        <form id="contactForm">
+          <input type="text" placeholder="Name" id="contactName">
+          <input type="email" placeholder="Email" id="contactEmail">
+          <textarea rows="2" placeholder="Message..."></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <p><i class="fas fa-headset"></i> WhatsApp: +234 902 178 3056</p>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <h3>Community</h3>
+      <div class="testi-grid">
+        <div class="testi-item"><p>"Ultimate streetwear!"</p><div>— Chidi O. ⭐⭐⭐⭐⭐</div></div>
+        <div class="testi-item"><p>"Limited drops are special"</p><div>— Adaeze K. ⭐⭐⭐⭐⭐</div></div>
+        <div class="testi-item"><p>"Worth every Naira!"</p><div>— Tunde A. ⭐⭐⭐⭐⭐</div></div>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <h3>Join Capgift VIP</h3>
+      <p>Early access + 10% off</p>
+      <div class="newsletter-input"><input type="email" id="newsletterEmail" placeholder="Your email"><button id="newsletterBtn">Subscribe</button></div>
+    </div>
+
+    <footer>© 2025 CAPGIFT SERVICES LIMITED — CAPGIFT EDITIONS</footer>
+  </div>
+
+  <div class="floating-cart" id="floatingCartIcon"><i class="fas fa-shopping-cart"></i> <span id="floatCartCount">0</span></div>
+  <div id="toastMessage" class="toast-msg"></div>
+  <div id="liveSale" class="live-sale"><i class="fas fa-fire"></i> Someone just bought!</div>
+  <button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+</div>
+
+<a href="https://wa.me/2349021783056" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- MODALS -->
+<div id="cartModal" class="cart-modal"><div class="modal-content"><h3>Cart</h3><div id="cartDetailedItems"></div><hr><p><strong>Total: ₦<span id="cartTotalNaira">0</span></strong></p><div class="terms-checkbox"><input type="checkbox" id="agreeTerms"><label>I agree to <a href="#" id="viewTermsLink">Terms</a></label></div><button class="close-cart" id="closeCartBtn">Continue</button><button class="buy-btn" id="checkoutBtn">Checkout</button><button class="whatsapp-cart-btn" id="whatsappCartBtn"><i class="fab fa-whatsapp"></i> Send to WhatsApp</button></div></div>
+
+<div id="paymentModal" class="payment-modal"><div class="modal-content"><h3>Payment</h3><div id="paymentSummary"></div><div class="payment-options"><label><input type="radio" name="paymentMethod" value="card"> 💳 Card</label><label><input type="radio" name="paymentMethod" value="transfer"> 🏦 Transfer</label><label><input type="radio" name="paymentMethod" value="ussd"> 📱 USSD</label></div><div id="paymentDetails"></div><div class="payment-actions"><button id="confirmPaymentBtn" class="confirm-btn">Confirm</button><button id="cancelPaymentBtn" class="cancel-btn">Cancel</button></div></div></div>
+
+<div id="termsModal" class="terms-modal"><div class="modal-content"><h3>Terms</h3><p>Limited to 100 pieces. 3-7 day delivery. 14-day returns.</p><button id="closeTermsBtn">OK</button></div></div>
+
+<div id="loyaltyModal" class="loyalty-modal"><div class="modal-content"><h3>Points</h3><p>You have <strong><span id="modalPoints">0</span> points</strong></p><p>✨ 10 pts per ₦10k spent<br>🎁 500 pts = ₦5k off</p><button id="closeLoyaltyBtn">Close</button></div></div>
+
+<div id="sizeGuideModal" class="size-guide-modal"><div class="modal-content"><h3>Size Guide</h3><table class="size-table"><tr><th>Size</th><th>Chest</th><th>Length</th></tr><tr><td>S</td><td>34-36</td><td>27</td></tr><tr><td>M</td><td>38-40</td><td>28</td></tr><tr><td>L</td><td>42-44</td><td>29</td></tr><tr><td>XL</td><td>46-48</td><td>30</td></tr><tr><td>2XL</td><td>50-52</td><td>31</td></tr></table><button id="closeSizeGuideBtn">Close</button></div></div>
+
+<div id="wishlistModal" class="wishlist-modal"><div class="modal-content"><h3>Wishlist</h3><div id="wishlistItems"></div><button id="closeWishlistBtn">Close</button></div></div>
+
+<!-- Compact Account Modal -->
+<div id="accountModal" class="account-modal">
+  <div class="account-modal-container">
+    <div class="account-left">
+      <i class="fas fa-crown"></i>
+      <h2>CAPGIFT</h2>
+      <p>🔔 Early drops</p>
+      <p>📌 Discounts</p>
+      <p>🛠️ Rewards</p>
+    </div>
+    <div class="account-right">
+      <div class="account-tabs">
+        <button class="account-tab active" data-page="login">Login</button>
+        <button class="account-tab" data-page="signup">Sign Up</button>
+      </div>
+      <div id="loginPage" class="account-page active">
+        <h3>Welcome Back</h3>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button id="loginBtn">Login</button>
+      </div>
+      <div id="signupPage" class="account-page">
+        <h3>Create Account</h3>
+        <input type="text" id="signupName" placeholder="Full Name">
+        <input type="email" id="signupEmail" placeholder="Email">
+        <input type="password" id="signupPassword" placeholder="Password">
+        <input type="password" id="signupConfirm" placeholder="Confirm Password">
+        <button id="signupBtn">Sign Up</button>
+      </div>
+      <div id="accountInfo" style="display: none; text-align: center;">
+        <div class="account-info">
+          <p><i class="fas fa-user-circle" style="font-size: 2rem;"></i></p>
+          <p>Welcome, <strong id="userName"></strong>!</p>
+          <p>✨ <span id="userPoints">0</span> points</p>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="close-account-modal" id="closeAccountModal">&times;</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
